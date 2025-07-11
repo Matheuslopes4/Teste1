@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.btn-candidatar').forEach(botao => {
       botao.addEventListener('click', () => {
-        window.open('inscricao.html', '_blank');
+        window.location.href = 'inscricao.html';
       });
     });
   }

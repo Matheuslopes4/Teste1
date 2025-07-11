@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Programa Aprendiz WEG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/WEG_logo.svg/2560px-WEG_logo.svg.png" alt="Logo WEG" class="logo">
+      <a href="#" class="login-btn">Login</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Junte-se ao Programa Aprendiz WEG</h1>
+      <p>Inicie sua jornada profissional com uma das maiores empresas do Brasil.</p>
+      <a href="#vagas" class="btn">Ver Vagas</a>
+    </div>
+  </section>
+
+  <section class="info">
+    <div class="container">
+      <h2>Por que ser um aprendiz na WEG?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Aprendizado</h3>
+          <p>Desenvolvimento técnico e profissional com acompanhamento constante.</p>
+        </div>
+        <div class="card">
+          <h3>Experiência</h3>
+          <p>Vivência real no ambiente industrial e administrativo.</p>
+        </div>
+        <div class="card">
+          <h3>Oportunidade</h3>
+          <p>Possibilidade de crescimento dentro da empresa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vagas" id="vagas">
+    <div class="container">
+      <h2>Vagas Abertas</h2>
+      <ul id="lista-vagas">
+        <!-- Inserido dinamicamente com JavaScript -->
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 WEG S.A. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

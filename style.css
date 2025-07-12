@@ -198,46 +198,49 @@ form button:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+  gap: 40px;
 }
 
 .sobre-img {
-  width: 45%; /* quase metade da tela */
-  max-width: none;
+  width: 50%; /* aumentamos de 45% para 50% */
+  max-width: 500px;
   flex-shrink: 0;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
 .sobre-texto {
   flex: 1;
-  min-width: 250px;
+  min-width: 280px;
+  max-width: 600px;
 }
 
 .sobre-texto h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+  font-size: 2rem; /* maior */
+  margin-bottom: 20px;
   color: #005baa;
 }
 
 .sobre-texto p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.2rem; /* maior */
+  line-height: 1.7;
   color: #444;
 }
 
-/* Responsividade para telas pequenas */
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
   .sobre-conteudo {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
   .sobre-img {
-    width: 100%;
+    width: 80%;
   }
 
   .sobre-texto {
-    width: 100%;
+    width: 90%;
   }
 }

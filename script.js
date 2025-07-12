@@ -119,6 +119,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Função para ativar animação quando o elemento entra na viewport
+  function animarScroll() {
+    const elementos = document.querySelectorAll('.animate-on-scroll');
+
+    elementos.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.85) { // quando está quase visível
+        el.classList.add('visible');
+      }
+    });
+  }
+
   gerarVagas();
   validarFormulario();
+
+  window.addEventListener('scroll', animarScroll);
+  animarScroll();
 });

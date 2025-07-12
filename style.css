@@ -236,9 +236,11 @@ form button:hover {
     text-align: center;
   }
 
-  .sobre-img {
-    width: 80%;
-  }
+ .sobre-img {
+  width: 80%;
+  margin: 0 auto; /* CENTRALIZA */
+  display: block;
+}
 
   .sobre-texto {
     width: 90%;

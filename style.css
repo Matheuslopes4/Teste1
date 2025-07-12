@@ -236,13 +236,15 @@ form button:hover {
     text-align: center;
   }
 
- .sobre-img {
-  width: 80%;
-  margin: 0 auto; /* CENTRALIZA */
-  display: block;
-}
+  .sobre-img {
+    width: 90%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto; /* centraliza horizontalmente */
+  }
 
   .sobre-texto {
-    width: 90%;
+    width: 100%;
+    text-align: center;
   }
 }

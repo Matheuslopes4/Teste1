@@ -14,14 +14,12 @@
     <img src="Centro (2).png" alt="Logo WEG" class="logo">
 
     <div class="menu-login-group">
-      <!-- Botão Hamburguer -->
       <div class="menu-toggle" id="menu-toggle">
         <span></span>
         <span></span>
         <span></span>
       </div>
 
-      <!-- Menu Navegação Desktop + Mobile -->
       <nav class="menu-mobile" id="menu-mobile">
         <a href="#hero">Início</a>
         <a href="#sobre">Sobre</a>
@@ -48,7 +46,32 @@
     <img src="foto1.jpg" alt="Foto informativa" class="sobre-img animate-on-scroll">
     <div class="sobre-texto animate-on-scroll">
       <h2>Conheça o CentroWEG</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit neque vel enim tempor, non tincidunt orci vehicula. Esse texto é um exemplo e pode ser substituído por conteúdo real.</p>
+      <p>
+        O <strong>CentroWEG</strong> é um espaço dedicado à formação profissional de jovens talentos. Com uma metodologia que combina teoria e prática, os cursos do CentroWEG são desenvolvidos para atender às demandas reais da indústria, preparando os alunos para atuarem em diversas áreas técnicas com excelência e inovação.
+      </p>
+      <p>
+        Os programas são voltados para jovens entre 14 e 16 anos, com foco no desenvolvimento técnico, humano e cidadão. Aqui, você encontrará oportunidades de aprendizado que podem transformar seu futuro.
+      </p>
+
+      <button id="ver-cursos-btn" class="btn-ver-cursos">Ver todos os cursos</button>
+
+      <div id="lista-cursos" class="cursos-escondidos">
+        <ul>
+          <li>Aprendizagem Industrial Operacional - Produtos Eletrônicos</li>
+          <li>Aprendizagem Industrial Operacional - Eletricidade</li>
+          <li>Aprendizagem Industrial Operacional - Mecânica</li>
+          <li>Aprendizagem Industrial Operacional - Tintas e Vernizes</li>
+          <li>Aprendizagem Industrial em Eletrotécnica</li>
+          <li>Aprendizagem Industrial em Ferramentaria</li>
+          <li>Aprendizagem Industrial em Manutenção Mecânica</li>
+          <li>Aprendizagem Industrial em Manutenção Eletroeletrônica</li>
+          <li>Aprendizagem Industrial em Desenvolvimento de Sistemas</li>
+          <li>Aprendizagem Industrial em Processos Químicos Industriais</li>
+          <li>Aprendizagem Industrial Operacional - Eletromecânica</li>
+          <li>Aprendizagem Industrial Operacional - Usinagem</li>
+          <li>Aprendizagem Industrial em Automação e Conectividade</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -87,7 +110,7 @@
     <h2>Perguntas Frequentes</h2>
     <div class="faq-item">
       <h3>Qual a idade mínima para participar?</h3>
-      <p>A idade mínima para participar do programa é 16 anos.</p>
+      <p>A idade mínima para participar do programa é 14 anos.</p>
     </div>
     <div class="faq-item">
       <h3>Quais são os benefícios oferecidos?</h3>
@@ -107,5 +130,17 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // Mostrar lista de cursos ao clicar no botão
+  const verCursosBtn = document.getElementById('ver-cursos-btn');
+  const listaCursos = document.getElementById('lista-cursos');
+
+  if (verCursosBtn && listaCursos) {
+    verCursosBtn.addEventListener('click', () => {
+      listaCursos.style.display = 'block';
+      verCursosBtn.style.display = 'none';
+    });
+  }
+</script>
 </body>
 </html>

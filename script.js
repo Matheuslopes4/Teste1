@@ -137,3 +137,15 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('scroll', animarScroll);
   animarScroll();
 });
+
+document.querySelectorAll('a[href^="#"]').forEach(ancora => {
+  ancora.addEventListener('click', function (e) {
+    e.preventDefault();
+    const alvo = document.querySelector(this.getAttribute('href'));
+    if (alvo) {
+      alvo.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});

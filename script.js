@@ -119,31 +119,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Animações de scroll para toda a página (mantém a classe .visible sem remover)
+  // Animações de scroll para toda a página
   function animarScroll() {
     const elementos = document.querySelectorAll('.animate-on-scroll');
     elementos.forEach(el => {
       const rect = el.getBoundingClientRect();
       if (rect.top <= window.innerHeight * 0.85) {
         el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
       }
     });
   }
 
-  // Scroll suave para âncoras
+  // Scroll suave para todos os links internos do tipo #id
   function ativarScrollSuave() {
     document.querySelectorAll('a[href^="#"]').forEach(ancora => {
       ancora.addEventListener('click', function (e) {
         e.preventDefault();
-        const alvo = document.querySelector(this.getAttribute('href'));
-        if (alvo) {
-          const headerAltura = document.querySelector('header').offsetHeight;
-          const posicao = alvo.offsetTop - headerAltura;
 
-          window.scrollTo({
-            top: posicao,
-            behavior: 'smooth'
-          });
+        const href = this.getAttribute('href');
+        if (href.length > 1) {
+          const alvo = document.querySelector(href);
+          if (alvo) {
+            const headerAltura = document.querySelector('header').offsetHeight;
+            const posicao = alvo.offsetTop - headerAltura;
+
+            window.scrollTo({
+              top: posicao,
+              behavior: 'smooth'
+            });
+          }
         }
       });
     });

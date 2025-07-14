@@ -37,8 +37,15 @@ header .container {
   align-items: center;
 }
 
+/* Grupo que agrupa menu e login, para alinhamento junto */
+.menu-login-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Ajuste aqui para mais ou menos espaço */
+}
+
 .logo {
-  height: 50px; /* Ajustável conforme necessário */
+  height: 50px; /* Ajustável */
   display: block;
 }
 
@@ -48,6 +55,61 @@ header .container {
   padding: 8px 16px;
   border: 1px solid white;
   border-radius: 4px;
+}
+
+/* Botão Hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Menu Mobile */
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  background-color: #005baa;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 20;
+}
+
+.menu-mobile a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.menu-mobile a:hover {
+  text-decoration: underline;
+}
+
+/* Mostrar apenas em telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  header .container {
+    justify-content: space-between;
+  }
+
+  .login-btn {
+    display: none;
+  }
 }
 
 /* Hero */
@@ -327,83 +389,5 @@ form button:hover {
 
   .logo {
     height: 45px;
-  }
-}
-
-/* Botão Hamburguer */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: white;
-  border-radius: 3px;
-  transition: 0.3s;
-}
-
-/* Menu Mobile */
-.menu-mobile {
-  display: none;
-  flex-direction: column;
-  background-color: #005baa;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  z-index: 20;
-}
-
-.menu-mobile a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 0;
-  font-weight: bold;
-}
-
-.menu-mobile a:hover {
-  text-decoration: underline;
-}
-
-/* Mostrar apenas em telas pequenas */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  header .container {
-    justify-content: space-between;
-  }
-
-  .login-btn {
-    display: none;
-  }
-}
-
-/* Menu desktop: menu sempre visível, horizontal e sem background */
-@media (min-width: 769px) {
-  .menu-mobile {
-    display: flex !important;
-    flex-direction: row;
-    position: static;
-    background: transparent;
-    padding: 0;
-    border-radius: 0;
-  }
-
-  .menu-mobile a {
-    color: white;
-    padding: 0 15px;
-    font-weight: normal;
-  }
-
-  /* Esconde o menu toggle no desktop */
-  .menu-toggle {
-    display: none !important;
   }
 }

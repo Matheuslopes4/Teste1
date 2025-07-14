@@ -37,24 +37,15 @@ header .container {
   align-items: center;
 }
 
-/* Grupo que agrupa menu e login, para alinhamento junto */
 .menu-login-group {
   display: flex;
   align-items: center;
-  gap: 10px; /* Ajuste aqui para mais ou menos espaço */
+  gap: 10px;
 }
 
 .logo {
-  height: 50px; /* Ajustável */
+  height: 50px;
   display: block;
-}
-
-.login-btn {
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  border: 1px solid white;
-  border-radius: 4px;
 }
 
 /* Botão Hamburguer */
@@ -97,19 +88,67 @@ header .container {
   text-decoration: underline;
 }
 
-/* Mostrar apenas em telas pequenas */
+/* Responsividade menu */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
   }
 
-  header .container {
-    justify-content: space-between;
-  }
-
-  .login-btn {
+  .login-desktop {
     display: none;
   }
+
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+
+  .login-mobile {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-mobile {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  .menu-mobile a {
+    padding: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .login-desktop {
+    display: inline-block;
+  }
+
+  .login-mobile {
+    display: none;
+  }
+}
+
+.login-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 0;
+  transition: opacity 0.3s ease;
+}
+
+.login-link:hover {
+  opacity: 0.8;
 }
 
 /* Hero */
@@ -137,6 +176,126 @@ header .container {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #004080;
+}
+
+/* Sobre */
+.sobre {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.sobre-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.sobre-img {
+  width: 50%;
+  max-width: 500px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+}
+
+.sobre-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #005baa;
+}
+
+.sobre-texto p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Lista de cursos */
+.cursos-container {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  list-style: none;
+  padding-left: 0;
+}
+
+.cursos-container li {
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+.cursos-container li::before {
+  content: '➢';
+  position: absolute;
+  left: 0;
+  color: #005baa;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.cursos-container.aberto {
+  max-height: 800px;
+}
+
+@media (min-width: 768px) {
+  .cursos-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Botão cursos */
+.btn-cursos {
+  margin-top: 15px;
+  background-color: #005baa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cursos:hover {
+  background-color: #004080;
+}
+
+/* Vídeos falsos */
+.video-fake-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.video-fake-img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.video-caption {
+  margin-top: 12px;
+  font-style: italic;
+  color: #444;
 }
 
 /* Info */
@@ -191,109 +350,6 @@ header .container {
   cursor: pointer;
 }
 
-/* Footer */
-footer {
-  background-color: #002d5c;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-/* Formulário */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-form label {
-  font-weight: bold;
-}
-
-form input,
-form select,
-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-form button {
-  background-color: #005baa;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #004080;
-}
-
-/* Aviso de idade */
-#aviso-idade {
-  color: red;
-  font-size: 0.9rem;
-  display: none;
-}
-
-/* Seção sobre */
-.sobre {
-  padding: 60px 0;
-  background-color: #ffffff;
-}
-
-.sobre-conteudo {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-}
-
-.sobre-img {
-  width: 50%;
-  max-width: 500px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-}
-
-.sobre-texto {
-  flex: 1;
-  min-width: 280px;
-  max-width: 600px;
-}
-
-.sobre-texto h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #005baa;
-}
-
-.sobre-texto p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-/* Animações */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* FAQ */
 .faq {
   background-color: #eef3f7;
@@ -315,7 +371,6 @@ form button:hover {
   border-radius: 8px;
   padding: 20px 25px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -335,43 +390,43 @@ form button:hover {
   line-height: 1.5;
 }
 
-/* Responsividade */
+/* Footer */
+footer {
+  background-color: #002d5c;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* Animações */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible,
+.animate-on-scroll.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsividade extra */
 @media (max-width: 768px) {
   .sobre-conteudo {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
   .sobre-img {
     width: 90%;
     max-width: 400px;
-    display: block;
     margin: 0 auto;
   }
 
   .sobre-texto {
     width: 100%;
-    text-align: center;
-  }
-
-  .faq {
-    padding: 40px 15px;
-  }
-
-  .faq-item {
-    max-width: 100%;
-    margin: 0 0 20px 0;
-    padding: 15px 20px;
-  }
-
-  .faq-item h3 {
-    font-size: 1.2rem;
-  }
-
-  .faq-item p {
-    font-size: 1rem;
-    line-height: 1.5;
   }
 
   .hero-text h1 {
@@ -387,199 +442,15 @@ form button:hover {
     padding: 10px 20px;
   }
 
+  .faq-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+  }
+
   .logo {
     height: 45px;
   }
-}
-
-/* Esconde login no menu mobile no desktop */
-.login-mobile {
-  display: none;
-}
-
-/* Menu visível no desktop */
-@media (min-width: 769px) {
-  .menu-mobile {
-    display: flex !important;
-    flex-direction: row;
-    gap: 20px;
-    position: static;
-    background: none;
-    padding: 0;
-  }
-
-  .menu-mobile a {
-    padding: 0;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  .login-desktop {
-    display: inline-block;
-  }
-}
-
-/* Menu mobile ativo no mobile */
-.menu-mobile.active {
-  display: flex;
-}
-
-/* Esconde menu no mobile por padrão */
-@media (max-width: 768px) {
-  .menu-mobile {
-    display: none;
-  }
-
-  .login-desktop {
-    display: none;
-  }
-
-  .login-mobile {
-    display: block;
-    margin-top: 10px;
-  }
-}
-
-/* Link de login como item de menu */
-.login-link {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 0;
-  transition: opacity 0.3s ease;
-}
-
-.login-link:hover {
-  opacity: 0.8;
-}
-
-/* Esconder nas versões certas */
-.login-mobile {
-  display: none;
-}
-
-.login-desktop {
-  display: inline-block;
-}
-
-/* Versão mobile */
-@media (max-width: 768px) {
-  .login-desktop {
-    display: none;
-  }
-
-  .login-mobile {
-    display: block;
-    padding-top: 10px;
-  }
-}
-
-.cursos-escondidos {
-  display: none;
-  margin-top: 15px;
-  color: #333;
-}
-
-.cursos-escondidos ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.btn-ver-cursos {
-  background-color: #005baa;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-ver-cursos:hover {
-  background-color: #004080;
-}
-
-/* Lista de cursos: duas colunas no desktop */
-.cursos-container {
-  margin-top: 15px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-  padding-left: 0; /* sem recuo extra */
-  list-style: none !important; /* força a remoção de bullets */
-}
-
-.cursos-container li {
-  list-style: none !important; /* reforça a remoção */
-  position: relative;
-  padding-left: 20px;
-}
-
-.cursos-container li::before {
-  content: '➢';
-  position: absolute;
-  left: 0;
-  color: #005baa;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.cursos-container.aberto {
-  max-height: 800px; /* valor suficiente para expandir */
-}
-
-@media (min-width: 768px) {
-  .cursos-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* Botão para mostrar/ocultar cursos */
-.btn-cursos {
-  margin-top: 15px;
-  background-color: #005baa;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-cursos:hover {
-  background-color: #004080;
-}
-
-/* Animações para elementos ao aparecer na tela */
-/* Já existe no seu CSS: 
-.animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-*/
-/* Então no JS basta adicionar/remover a classe 'visible' para animar */
-
-.video-fake-container {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.video-fake-img {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  cursor: default;
-}
-
-.video-caption {
-  margin-top: 12px;
-  font-style: italic;
-  color: #444;
 }

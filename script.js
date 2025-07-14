@@ -175,3 +175,14 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('scroll', animarScroll);
   animarScroll(); // Aplica a animação logo no carregamento, se estiver visível
 });
+
+// Mostrar lista de cursos ao clicar no botão
+const verCursosBtn = document.getElementById('ver-cursos-btn');
+const listaCursos = document.getElementById('lista-cursos');
+
+if (verCursosBtn && listaCursos) {
+  verCursosBtn.addEventListener('click', () => {
+    listaCursos.style.display = 'block';
+    verCursosBtn.style.display = 'none'; // esconde o botão após abrir
+  });
+}

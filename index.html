@@ -52,6 +52,26 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Estilo para o vídeo falso */
+    .video-fake-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .video-fake-img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      cursor: default;
+    }
+
+    .video-caption {
+      margin-top: 12px;
+      font-style: italic;
+      color: #444;
+    }
   </style>
 </head>
 <body>
@@ -88,6 +108,14 @@
   </div>
 </section>
 
+<!-- Imagem representando o "vídeo" -->
+<div class="video-fake-container animate-on-scroll fade-in">
+  <img src="thumb2.jpg" alt="Dia a dia no CentroWEG" class="video-fake-img">
+  <p class="video-caption">
+    Veja como é o dia a dia dos aprendizes no CentroWEG e descubra como é vestir a camisa da empresa!
+  </p>
+</div>
+
 <section class="sobre animate-on-scroll fade-in" id="sobre">
   <div class="container sobre-conteudo">
     <img src="foto1.jpg" alt="Foto informativa" class="sobre-img animate-on-scroll fade-in" />
@@ -116,15 +144,6 @@
         <li>Aprendizagem Industrial Operacional - Usinagem</li>
         <li>Aprendizagem Industrial em Automação e Conectividade</li>
       </ul>
-
-      <!-- Imagem representando o "vídeo" -->
-      <div class="video-fake-container animate-on-scroll fade-in">
-        <img src="thumb2.jpg" alt="Dia a dia no CentroWEG" class="video-fake-img">
-        <p class="video-caption">
-          Veja como é o dia a dia dos aprendizes no CentroWEG e descubra como é vestir a camisa da empresa!
-        </p>
-      </div>
-
     </div>
   </div>
 </section>

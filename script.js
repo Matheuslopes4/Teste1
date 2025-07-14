@@ -157,3 +157,20 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('scroll', animarScroll);
   animarScroll(); // já aplica se ao carregar estiver visível
 });
+
+// Menu Hamburguer
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu-mobile");
+
+  toggle.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Esconde o menu ao clicar em um link
+  document.querySelectorAll("#menu-mobile a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.style.display = "none";
+    });
+  });
+});

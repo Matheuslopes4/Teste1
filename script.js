@@ -149,28 +149,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Executa tudo
+  // Função para controlar o menu hambúrguer
+  function configurarMenuHamburguer() {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu-mobile");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // Fecha o menu ao clicar em qualquer link dentro dele (mobile)
+    document.querySelectorAll("#menu-mobile a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+      });
+    });
+  }
+
+  // Executa as funções principais
   gerarVagas();
   validarFormulario();
   ativarScrollSuave();
+  configurarMenuHamburguer();
 
   window.addEventListener('scroll', animarScroll);
-  animarScroll(); // já aplica se ao carregar estiver visível
-});
-
-// Menu Hamburguer
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu-mobile");
-
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-  });
-
-  // Fecha menu ao clicar em um link (mobile)
-  document.querySelectorAll("#menu-mobile a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("active");
-    });
-  });
+  animarScroll(); // Aplica a animação logo no carregamento, se estiver visível
 });

@@ -119,13 +119,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Animações de scroll
+  // Animações de scroll para toda a página
   function animarScroll() {
     const elementos = document.querySelectorAll('.animate-on-scroll');
     elementos.forEach(el => {
       const rect = el.getBoundingClientRect();
       if (rect.top <= window.innerHeight * 0.85) {
         el.classList.add('visible');
+      } else {
+        el.classList.remove('visible');
       }
     });
   }
@@ -166,6 +168,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Controle do botão que abre/esconde lista de cursos
+  const btnCursos = document.querySelector('.btn-cursos');
+  const listaCursos = document.getElementById('lista-cursos');
+
+  if (btnCursos && listaCursos) {
+    btnCursos.addEventListener('click', () => {
+      listaCursos.classList.toggle('aberto');
+      if (listaCursos.classList.contains('aberto')) {
+        btnCursos.textContent = 'Ocultar cursos';
+      } else {
+        btnCursos.textContent = 'Ver todos os cursos';
+      }
+    });
+  }
+
   // Executa as funções principais
   gerarVagas();
   validarFormulario();
@@ -173,16 +190,5 @@ document.addEventListener("DOMContentLoaded", function () {
   configurarMenuHamburguer();
 
   window.addEventListener('scroll', animarScroll);
-  animarScroll(); // Aplica a animação logo no carregamento, se estiver visível
+  animarScroll(); // Anima já no carregamento, para elementos visíveis
 });
-
-// Mostrar lista de cursos ao clicar no botão
-const verCursosBtn = document.getElementById('ver-cursos-btn');
-const listaCursos = document.getElementById('lista-cursos');
-
-if (verCursosBtn && listaCursos) {
-  verCursosBtn.addEventListener('click', () => {
-    listaCursos.style.display = 'block';
-    verCursosBtn.style.display = 'none'; // esconde o botão após abrir
-  });
-}

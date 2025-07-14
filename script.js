@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Formatação de CPF
   function formatarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, ""); // remove tudo que não é número
+    cpf = cpf.replace(/\D/g, "");
     cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
     cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
     cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
@@ -64,17 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
       idadeInput.insertAdjacentElement("afterend", avisoIdade);
     }
 
-    // Formata CPF enquanto digita
     cpfInput.addEventListener("input", () => {
       cpfInput.value = formatarCPF(cpfInput.value);
     });
 
-    // Formata telefone enquanto digita
     telefoneInput.addEventListener("input", () => {
       telefoneInput.value = formatarTelefone(telefoneInput.value);
     });
 
-    // Valida idade e data de nascimento
     function calcularIdade(dataNasc) {
       const hoje = new Date();
       const nasc = new Date(dataNasc);
@@ -115,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       alert("Inscrição enviada com sucesso!");
       form.reset();
-      event.preventDefault(); // Remova se quiser que envie para backend real
+      event.preventDefault();
     });
   }
 
@@ -130,47 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Scroll suave para âncoras
- function ativarScrollSuave() {
-  document.querySelectorAll('a[href^="#"]').forEach(ancora => {
-    ancora.addEventListener('click', function (e) {
-      e.preventDefault();
-      const alvo = document.querySelector(this.getAttribute('href'));
-      if (alvo) {
-        const headerAltura = document.querySelector('header').offsetHeight;
-        const posicao = alvo.offsetTop - headerAltura;
-
-        window.scrollTo({
-          top: posicao,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-}
-
-  // Executa tudo
-  gerarVagas();
-  validarFormulario();
-  ativarScrollSuave();
-
-  window.addEventListener('scroll', animarScroll);
-  animarScroll(); // já aplica se ao carregar estiver visível
-});
-
-// Menu Hamburguer
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu-mobile");
-
-  toggle.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-  });
-
-  // Esconde o menu ao clicar em um link
-  document.querySelectorAll("#menu-mobile a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.style.display = "none";
-    });
-  });
-});
+  // Scroll suave para âncoras, considerando altura do header
+  function ativarScrollSuave() {
+    document.querySelectorAll('a[href^="#"]').forEach(ancora => {
+      ancora.addEventListener('

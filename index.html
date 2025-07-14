@@ -6,6 +6,53 @@
   <title>CentroWEG</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Lista de cursos: duas colunas no desktop */
+    .cursos-container {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .cursos-container.aberto {
+      max-height: 800px; /* suficiente para expandir */
+    }
+
+    @media (min-width: 768px) {
+      .cursos-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .btn-cursos {
+      margin-top: 15px;
+      background-color: #005baa;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Animações fade-in globais */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-on-scroll.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
@@ -46,49 +93,40 @@
     <img src="foto1.jpg" alt="Foto informativa" class="sobre-img animate-on-scroll">
     <div class="sobre-texto animate-on-scroll">
       <h2>Conheça o CentroWEG</h2>
-      <p>
-        O <strong>CentroWEG</strong> é um espaço dedicado à formação profissional de jovens talentos. Com uma metodologia que combina teoria e prática, os cursos do CentroWEG são desenvolvidos para atender às demandas reais da indústria, preparando os alunos para atuarem em diversas áreas técnicas com excelência e inovação.
-      </p>
-      <p>
-        Os programas são voltados para jovens entre 14 e 16 anos, com foco no desenvolvimento técnico, humano e cidadão. Aqui, você encontrará oportunidades de aprendizado que podem transformar seu futuro.
-      </p>
-
-      <button id="ver-cursos-btn" class="btn-ver-cursos">Ver todos os cursos</button>
-
-      <div id="lista-cursos" class="cursos-escondidos">
-        <ul>
-          <li>Aprendizagem Industrial Operacional - Produtos Eletrônicos</li>
-          <li>Aprendizagem Industrial Operacional - Eletricidade</li>
-          <li>Aprendizagem Industrial Operacional - Mecânica</li>
-          <li>Aprendizagem Industrial Operacional - Tintas e Vernizes</li>
-          <li>Aprendizagem Industrial em Eletrotécnica</li>
-          <li>Aprendizagem Industrial em Ferramentaria</li>
-          <li>Aprendizagem Industrial em Manutenção Mecânica</li>
-          <li>Aprendizagem Industrial em Manutenção Eletroeletrônica</li>
-          <li>Aprendizagem Industrial em Desenvolvimento de Sistemas</li>
-          <li>Aprendizagem Industrial em Processos Químicos Industriais</li>
-          <li>Aprendizagem Industrial Operacional - Eletromecânica</li>
-          <li>Aprendizagem Industrial Operacional - Usinagem</li>
-          <li>Aprendizagem Industrial em Automação e Conectividade</li>
-        </ul>
-      </div>
+      <p>O CentroWEG é um ambiente de formação completo que prepara jovens talentos para o futuro profissional com cursos de aprendizagem técnica e operacional. Clique abaixo para ver todos os cursos oferecidos:</p>
+      <button class="btn-cursos" onclick="toggleCursos()">Ver todos os cursos</button>
+      <ul class="cursos-container" id="lista-cursos">
+        <li>Aprendizagem Industrial Operacional - Produtos Eletrônicos</li>
+        <li>Aprendizagem Industrial Operacional - Eletricidade</li>
+        <li>Aprendizagem Industrial Operacional - Mecânica</li>
+        <li>Aprendizagem Industrial Operacional - Tintas e Vernizes</li>
+        <li>Aprendizagem Industrial em Eletrotécnica</li>
+        <li>Aprendizagem Industrial em Ferramentaria</li>
+        <li>Aprendizagem Industrial em Manutenção Mecânica</li>
+        <li>Aprendizagem Industrial em Manutenção Eletroeletrônica</li>
+        <li>Aprendizagem Industrial em Desenvolvimento de Sistemas</li>
+        <li>Aprendizagem Industrial em Processos Químicos Industriais</li>
+        <li>Aprendizagem Industrial Operacional - Eletromecânica</li>
+        <li>Aprendizagem Industrial Operacional - Usinagem</li>
+        <li>Aprendizagem Industrial em Automação e Conectividade</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="info">
+<section class="info animate-on-scroll">
   <div class="container">
-    <h2 class="animate-on-scroll">Por que participar do CentroWEG?</h2>
+    <h2>Por que participar do CentroWEG?</h2>
     <div class="cards">
-      <div class="card animate-on-scroll">
+      <div class="card">
         <h3>Aprendizado</h3>
         <p>Desenvolvimento técnico e profissional com acompanhamento constante.</p>
       </div>
-      <div class="card animate-on-scroll">
+      <div class="card">
         <h3>Experiência</h3>
         <p>Vivência real no ambiente industrial e administrativo.</p>
       </div>
-      <div class="card animate-on-scroll">
+      <div class="card">
         <h3>Oportunidade</h3>
         <p>Possibilidade de crescimento dentro da empresa.</p>
       </div>
@@ -96,9 +134,9 @@
   </div>
 </section>
 
-<section class="vagas" id="vagas">
+<section class="vagas animate-on-scroll" id="vagas">
   <div class="container">
-    <h2 class="animate-on-scroll">Vagas Abertas</h2>
+    <h2>Vagas Abertas</h2>
     <ul id="lista-vagas">
       <!-- Inserido dinamicamente com JavaScript -->
     </ul>
@@ -110,7 +148,7 @@
     <h2>Perguntas Frequentes</h2>
     <div class="faq-item">
       <h3>Qual a idade mínima para participar?</h3>
-      <p>A idade mínima para participar do programa é 14 anos.</p>
+      <p>A idade mínima para participar do programa é 16 anos.</p>
     </div>
     <div class="faq-item">
       <h3>Quais são os benefícios oferecidos?</h3>
@@ -129,18 +167,73 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
 <script>
-  // Mostrar lista de cursos ao clicar no botão
-  const verCursosBtn = document.getElementById('ver-cursos-btn');
-  const listaCursos = document.getElementById('lista-cursos');
+  // Função para alternar visibilidade da lista de cursos
+  function toggleCursos() {
+    const lista = document.getElementById('lista-cursos');
+    lista.classList.toggle('aberto');
+  }
 
-  if (verCursosBtn && listaCursos) {
-    verCursosBtn.addEventListener('click', () => {
-      listaCursos.style.display = 'block';
-      verCursosBtn.style.display = 'none';
+  // Animação suave de scroll para elementos com .animate-on-scroll
+  function animarScroll() {
+    const elementos = document.querySelectorAll('.animate-on-scroll');
+    elementos.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.85) {
+        el.classList.add('fade-in');
+      }
     });
   }
+
+  // Função para gerar lista de vagas dinamicamente
+  function gerarVagas() {
+    const vagas = [
+      { titulo: "Aprendiz Industrial em Tintas e Vernizes - Jaraguá do Sul", local: "Jaraguá do Sul / SC" },
+      { titulo: "Aprendiz Industrial em Tintas e Vernizes - Mauá", local: "Mauá / SP" },
+      { titulo: "Aprendiz Industrial em Eletromecânica - Jaraguá do Sul", local: "Jaraguá do Sul / SC" }
+    ];
+
+    const lista = document.getElementById('lista-vagas');
+    if (!lista) return;
+
+    vagas.forEach(vaga => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <div>
+          <strong>${vaga.titulo}</strong><br />
+          <small>${vaga.local}</small>
+        </div>
+        <button type="button" class="btn-candidatar">Candidatar-se</button>
+      `;
+      lista.appendChild(li);
+    });
+
+    document.querySelectorAll('.btn-candidatar').forEach(botao => {
+      botao.addEventListener('click', () => {
+        window.location.href = 'inscricao.html';
+      });
+    });
+  }
+
+  // Inicializa tudo após carregamento da página
+  document.addEventListener("DOMContentLoaded", function () {
+    gerarVagas();
+    animarScroll();
+    window.addEventListener('scroll', animarScroll);
+
+    // Menu hamburguer
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu-mobile");
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+    document.querySelectorAll("#menu-mobile a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+      });
+    });
+  });
 </script>
+
 </body>
 </html>

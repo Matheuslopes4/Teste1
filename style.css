@@ -17,6 +17,7 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative; /* importante para o menu-mobile posicionar corretamente */
 }
 
 /* Header */
@@ -35,10 +36,11 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* para o menu mobile absolute */
 }
 
 .logo {
-  height: 50px; /* Ajustável conforme necessário */
+  height: 50px; /* ajuste o tamanho da logo conforme necessário */
   display: block;
 }
 
@@ -357,6 +359,10 @@ form button:hover {
   padding: 15px;
   border-radius: 8px;
   z-index: 20;
+}
+
+.menu-mobile.active {
+  display: flex;
 }
 
 .menu-mobile a {

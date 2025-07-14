@@ -19,39 +19,26 @@ body {
   margin: 0 auto;
 }
 
-/* Para container do formulário (menor largura, fundo branco e sombra) */
-form + .container, 
-form ~ .container,
-form.container {
-  max-width: 700px;
-  margin: 40px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
 /* Header */
 header {
   background-color: #005baa;
-  height: 70px;
-  padding: 0 20px;
+  padding: 0;
   position: sticky;
   top: 0;
   z-index: 10;
-  overflow: visible;
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
 }
 
 .logo {
-  height: 120px;
-  margin-top: -30px;
+  height: 50px; /* Ajustável conforme necessário */
   display: block;
 }
 
@@ -61,7 +48,6 @@ header .container {
   padding: 8px 16px;
   border: 1px solid white;
   border-radius: 4px;
-  font-size: 1rem;
 }
 
 /* Hero */
@@ -234,57 +220,6 @@ form button:hover {
   color: #444;
 }
 
-/* Responsividade geral */
-@media (max-width: 768px) {
-  header .container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    height: 100px;
-    margin-top: -15px;
-  }
-
-  .sobre-conteudo {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .sobre-img {
-    width: 90%;
-    max-width: 400px;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .sobre-texto {
-    width: 100%;
-    text-align: center;
-  }
-
-  .faq {
-    padding: 40px 15px;
-  }
-
-  .faq-item {
-    max-width: 100%;
-    margin: 0 0 20px 0;
-    padding: 15px 20px;
-  }
-
-  .faq-item h3 {
-    font-size: 1.2rem;
-  }
-
-  .faq-item p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-}
-
 /* Animações */
 .animate-on-scroll {
   opacity: 0;
@@ -336,4 +271,61 @@ form button:hover {
   font-size: 1rem;
   color: #333;
   line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-conteudo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-img {
+    width: 90%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sobre-texto {
+    width: 100%;
+    text-align: center;
+  }
+
+  .faq {
+    padding: 40px 15px;
+  }
+
+  .faq-item {
+    max-width: 100%;
+    margin: 0 0 20px 0;
+    padding: 15px 20px;
+  }
+
+  .faq-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    height: 45px;
+  }
 }

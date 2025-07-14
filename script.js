@@ -131,19 +131,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Scroll suave para âncoras
-  function ativarScrollSuave() {
-    document.querySelectorAll('a[href^="#"]').forEach(ancora => {
-      ancora.addEventListener('click', function (e) {
-        e.preventDefault();
-        const alvo = document.querySelector(this.getAttribute('href'));
-        if (alvo) {
-          alvo.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
+ function ativarScrollSuave() {
+  document.querySelectorAll('a[href^="#"]').forEach(ancora => {
+    ancora.addEventListener('click', function (e) {
+      e.preventDefault();
+      const alvo = document.querySelector(this.getAttribute('href'));
+      if (alvo) {
+        const headerAltura = document.querySelector('header').offsetHeight;
+        const posicao = alvo.offsetTop - headerAltura;
+
+        window.scrollTo({
+          top: posicao,
+          behavior: 'smooth'
+        });
+      }
     });
-  }
+  });
+}
 
   // Executa tudo
   gerarVagas();

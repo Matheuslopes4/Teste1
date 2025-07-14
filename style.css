@@ -391,3 +391,53 @@ form button:hover {
     height: 45px;
   }
 }
+
+/* Esconde login no menu mobile no desktop */
+.login-mobile {
+  display: none;
+}
+
+/* Menu visível no desktop */
+@media (min-width: 769px) {
+  .menu-mobile {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  .menu-mobile a {
+    padding: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .login-desktop {
+    display: inline-block;
+  }
+}
+
+/* Menu mobile ativo no mobile */
+.menu-mobile.active {
+  display: flex;
+}
+
+/* Esconde menu no mobile por padrão */
+@media (max-width: 768px) {
+  .menu-mobile {
+    display: none;
+  }
+
+  .login-desktop {
+    display: none;
+  }
+
+  .login-mobile {
+    display: block;
+    margin-top: 10px;
+  }
+}

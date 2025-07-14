@@ -441,3 +441,37 @@ form button:hover {
     margin-top: 10px;
   }
 }
+
+/* Link de login como item de menu */
+.login-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 0;
+  transition: opacity 0.3s ease;
+}
+
+.login-link:hover {
+  opacity: 0.8;
+}
+
+/* Esconder nas versões certas */
+.login-mobile {
+  display: none;
+}
+
+.login-desktop {
+  display: inline-block;
+}
+
+/* Versão mobile */
+@media (max-width: 768px) {
+  .login-desktop {
+    display: none;
+  }
+
+  .login-mobile {
+    display: block;
+    padding-top: 10px;
+  }
+}

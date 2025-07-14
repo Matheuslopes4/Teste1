@@ -119,15 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Animações de scroll para toda a página
+  // Animações de scroll para toda a página (mantém a classe .visible sem remover)
   function animarScroll() {
     const elementos = document.querySelectorAll('.animate-on-scroll');
     elementos.forEach(el => {
       const rect = el.getBoundingClientRect();
       if (rect.top <= window.innerHeight * 0.85) {
         el.classList.add('visible');
-      } else {
-        el.classList.remove('visible');
       }
     });
   }

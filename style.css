@@ -512,11 +512,12 @@ form button:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
-  padding-left: 0;
-  list-style: none; /* remove o marcador padrão */
+  padding-left: 0; /* sem recuo extra */
+  list-style: none !important; /* força a remoção de bullets */
 }
 
 .cursos-container li {
+  list-style: none !important; /* reforça a remoção */
   position: relative;
   padding-left: 20px;
 }

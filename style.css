@@ -475,3 +475,30 @@ form button:hover {
     padding-top: 10px;
   }
 }
+
+.cursos-escondidos {
+  display: none;
+  margin-top: 15px;
+  color: #333;
+}
+
+.cursos-escondidos ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.btn-ver-cursos {
+  background-color: #005baa;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ver-cursos:hover {
+  background-color: #004080;
+}

@@ -17,7 +17,6 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative; /* importante para o menu-mobile posicionar corretamente */
 }
 
 /* Header */
@@ -36,11 +35,10 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* para o menu mobile absolute */
 }
 
 .logo {
-  height: 50px; /* ajuste o tamanho da logo conforme necessário */
+  height: 50px; /* Ajustável conforme necessário */
   display: block;
 }
 
@@ -361,10 +359,6 @@ form button:hover {
   z-index: 20;
 }
 
-.menu-mobile.active {
-  display: flex;
-}
-
 .menu-mobile a {
   color: white;
   text-decoration: none;
@@ -388,5 +382,28 @@ form button:hover {
 
   .login-btn {
     display: none;
+  }
+}
+
+/* Menu desktop: menu sempre visível, horizontal e sem background */
+@media (min-width: 769px) {
+  .menu-mobile {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .menu-mobile a {
+    color: white;
+    padding: 0 15px;
+    font-weight: normal;
+  }
+
+  /* Esconde o menu toggle no desktop */
+  .menu-toggle {
+    display: none !important;
   }
 }

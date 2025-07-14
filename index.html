@@ -2,104 +2,16 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CentroWEG</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Estilos extras para lista de cursos e animações */
-    .cursos-container {
-      margin-top: 15px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      list-style: disc;
-      padding-left: 20px;
-    }
-
-    .cursos-container.aberto {
-      max-height: 800px;
-    }
-
-    @media (min-width: 768px) {
-      .cursos-container {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .btn-cursos {
-      margin-top: 15px;
-      background-color: #005baa;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-cursos:hover {
-      background-color: #004080;
-    }
-
-    /* Animações fade-in globais */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .animate-on-scroll.fade-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Video fake container ajustes */
-    .video-fake-container {
-      margin-top: 40px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    @media (min-width: 768px) {
-      .video-fake-container {
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-      }
-    }
-
-    .video-fake {
-      max-width: 800px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .video-fake-img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-      cursor: default;
-    }
-
-    .video-caption {
-      margin-top: 12px;
-      font-style: italic;
-      color: #444;
-    }
-  </style>
 </head>
 <body>
 
 <header>
   <div class="container">
-    <img src="CENTRO (2).png" alt="Logo WEG" class="logo" />
+    <img src="CENTRO (2).png" alt="Logo WEG" class="logo">
 
     <div class="menu-login-group">
       <div class="menu-toggle" id="menu-toggle">
@@ -126,24 +38,6 @@
     <h1>Junte-se ao CentroWEG</h1>
     <p>Inicie sua jornada profissional com uma das maiores empresas do Brasil.</p>
     <a href="#vagas" class="btn">Ver Vagas</a>
-  </div>
-</section>
-
-<!-- Vídeos falsos lado a lado -->
-<section class="video-fake-container animate-on-scroll fade-in">
-  <div class="container">
-    <div class="video-fake">
-      <img src="thumb2.jpg" alt="Dia a dia no CentroWEG" class="video-fake-img" />
-      <p class="video-caption">
-        Descubra como é a rotina no CentroWEG e veja de perto como é se desenvolver dentro da indústria.
-      </p>
-    </div>
-    <div class="video-fake">
-      <img src="thumb1.jpg" alt="Tour pelo CentroWEG" class="video-fake-img" />
-      <p class="video-caption">
-        Faça um tour visual pelo CentroWEG e conheça os ambientes onde os aprendizes constroem seus futuros.
-      </p>
-    </div>
   </div>
 </section>
 
@@ -175,6 +69,22 @@
         <li>Aprendizagem Industrial em Automação e Conectividade</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- Vídeos lado a lado entre Sobre e Info -->
+<section class="video-fake-container animate-on-scroll fade-in">
+  <div class="container">
+    <img src="thumb2.jpg" alt="Dia a dia no CentroWEG" class="video-fake-img">
+    <p class="video-caption">
+      Descubra como é a rotina no CentroWEG e veja de perto como é se desenvolver dentro da indústria.
+    </p>
+  </div>
+  <div class="container">
+    <img src="thumb1.jpg" alt="Tour pelo CentroWEG" class="video-fake-img">
+    <p class="video-caption">
+      Faça um tour visual pelo CentroWEG e conheça os ambientes onde os aprendizes constroem seus futuros.
+    </p>
   </div>
 </section>
 
@@ -216,15 +126,11 @@
     </div>
     <div class="faq-item">
       <h3>Quais são os benefícios oferecidos?</h3>
-      <p>
-        Os participantes do CentroWEG contam com plano de saúde, plano odontológico, salário conforme previsto para aprendizes, além de um ambiente de trabalho que promove desenvolvimento profissional e pessoal.
-      </p>
+      <p>Os participantes do CentroWEG contam com plano de saúde, plano odontológico, salário conforme previsto para aprendizes, além de um ambiente de trabalho que promove desenvolvimento profissional e pessoal.</p>
     </div>
     <div class="faq-item">
       <h3>Como me preparar para o programa?</h3>
-      <p>
-        Para se preparar, recomendamos que você busque conhecimentos básicos da área desejada, mantenha a documentação em dia e esteja aberto a aprender na prática, aproveitando todas as oportunidades de crescimento oferecidas pelo CentroWEG.
-      </p>
+      <p>Para se preparar, recomendamos que você busque conhecimentos básicos da área desejada, mantenha a documentação em dia e esteja aberto a aprender na prática, aproveitando todas as oportunidades de crescimento oferecidas pelo CentroWEG.</p>
     </div>
   </div>
 </section>
@@ -236,13 +142,13 @@
 </footer>
 
 <script>
-  // Alterna visibilidade da lista de cursos
+  // Função para alternar visibilidade da lista de cursos
   function toggleCursos() {
     const lista = document.getElementById('lista-cursos');
     lista.classList.toggle('aberto');
   }
 
-  // Animação suave ao rolar para elementos com .animate-on-scroll
+  // Animação suave de scroll para elementos com .animate-on-scroll
   function animarScroll() {
     const elementos = document.querySelectorAll('.animate-on-scroll');
     elementos.forEach(el => {
@@ -253,7 +159,7 @@
     });
   }
 
-  // Gera lista de vagas dinamicamente
+  // Função para gerar lista de vagas dinamicamente
   function gerarVagas() {
     const vagas = [
       { titulo: "Aprendiz Industrial em Tintas e Vernizes - Jaraguá do Sul", local: "Jaraguá do Sul / SC" },
@@ -283,12 +189,13 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  // Inicializa tudo após carregamento da página
+  document.addEventListener("DOMContentLoaded", function () {
     gerarVagas();
     animarScroll();
     window.addEventListener('scroll', animarScroll);
 
-    // Menu hamburguer toggle
+    // Menu hamburguer
     const toggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("menu-mobile");
     toggle.addEventListener("click", () => {
@@ -300,14 +207,15 @@
       });
     });
 
-    // Scroll suave para links internos
+    // Scroll suave ao clicar nos links de navegação com #
     document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           e.preventDefault();
           const headerHeight = document.querySelector('header').offsetHeight;
           const top = target.offsetTop - headerHeight;
+
           window.scrollTo({
             top,
             behavior: 'smooth'
@@ -317,6 +225,5 @@
     });
   });
 </script>
-
 </body>
 </html>

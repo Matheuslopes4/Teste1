@@ -502,3 +502,50 @@ form button:hover {
 .btn-ver-cursos:hover {
   background-color: #004080;
 }
+
+/* Lista de cursos: duas colunas no desktop */
+.cursos-container {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.cursos-container.aberto {
+  max-height: 800px; /* valor suficiente para expandir */
+}
+
+@media (min-width: 768px) {
+  .cursos-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Botão para mostrar/ocultar cursos */
+.btn-cursos {
+  margin-top: 15px;
+  background-color: #005baa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cursos:hover {
+  background-color: #004080;
+}
+
+/* Animações para elementos ao aparecer na tela */
+/* Já existe no seu CSS: 
+.animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+*/
+/* Então no JS basta adicionar/remover a classe 'visible' para animar */

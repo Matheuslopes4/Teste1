@@ -564,3 +564,22 @@ form button:hover {
 .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 */
 /* Então no JS basta adicionar/remover a classe 'visible' para animar */
+
+.video-fake-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.video-fake-img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.video-caption {
+  margin-top: 12px;
+  font-style: italic;
+  color: #444;
+}
